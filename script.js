@@ -362,3 +362,135 @@ const myPrime=newArray.filter(num=>{
 });
 console.log(myPrime);
 */
+
+
+/*
+a) Write a constructor for the class Movie, which takes a String representing the title of the movie, a String representing the studio, and a String representing the rating as its arguments, and sets the respective class properties to these values.
+
+b) The constructor for the class Movie will set the class property rating to "PG" as default when no rating is provided.
+*/
+class Movie {
+   constructor(title,studio,rating = "PG"){
+      this.title = title;
+      this.studio = studio;
+      this.rating = rating;
+   }
+}
+console.log("Movie Class")
+var test = new Movie("Casino Royale","Eon Productions")
+console.log(test)
+
+//d) Write a piece of code that creates an instance of the class Movie with the title “Casino Royale”, the studio “Eon Productions”, and the rating “PG­13”
+
+var test_1 = new Movie("Casino Royale","Eon Productions","PG-13")
+console.log(test_1)
+
+/* Output : 
+   Movie Class
+   Movie {title: 'Casino Royale', studio: 'Eon Productions', rating: 'PG-13'}
+   Movie {title: 'Casino Royale', studio: 'Eon Productions', rating: 'PG'}*/
+
+// Circle class
+class Circle {
+   constructor(radius, color) {
+     this.radius = radius;
+     this.color = color;
+   }
+   get radiusCircle() {
+     return this.radius;
+   }
+   get colorCircle() {
+     return this.color;
+   }
+   set radiusCircle(radius) {
+     this.radius = radius;
+   }
+   set colorCircle(color) {
+     this.color = color;
+   }
+   get toString() {
+     return `"Circle[radius=${this.radius}, color=${this.color}]"`;
+   }
+   get areaCircle() {
+     return Math.PI * this.radius * this.radius;
+   }
+   get circumferenceCircle() {
+     return 2 * Math.PI * this.radius;
+   }
+ }
+ var obj1 = new Circle(1.0, "red");
+ console.log(obj1.radiusCircle);
+ console.log(obj1.colorCircle); 
+ console.log(obj1.toString);
+ console.log(obj1.areaCircle);
+ console.log(obj1.circumferenceCircle);
+ 
+ 
+
+ /* Output
+1
+red
+"Circle[radius=1, color=red]"
+3.141592653589793
+6.283185307179586
+ */
+
+class Person{
+	constructor(name,age,salary,gender){
+	this.name = name;
+	this.age = age;
+	this.salary = salary;
+	this.gender = gender;
+	}
+}
+var test = new Person("John","27","20000","male")
+console.log("Person class")
+console.log(test.name);
+console.log(test.age);
+console.log(test.gender);
+console.log(test.salary);
+/* Output
+Person class
+John
+27
+male
+20000
+*/
+
+class Uberprice{
+   constructor(baseprice,dist,bookingfees){
+      this.baseprice = baseprice;
+      this.dist= dist;
+      this.bookingfees = bookingfees; 
+   }
+   get uberbaseprice(){
+      return this.baseprice;
+   } 
+   get uberdist(){
+      return this.dist;
+   }
+   get uberbookingfees(){
+      return this.bookingfees;
+   }
+   set uberbaseprice(baseprice){
+      this.baseprice = baseprice;
+   }
+   set uberdist(dist){
+      this.dist = dist;
+   }
+   set uberbookingfees(bookingfees){
+      this.bookingfees = bookingfees;
+   }
+ 
+   get final_fare(){
+      return (this.baseprice * this.dist + this.bookingfees);
+   }
+}
+var obj2 = new Uberprice(50,5,20);
+console.log("Uber price")
+console.log(obj2.final_fare);
+
+/*Output
+Uber price
+270
+*/
